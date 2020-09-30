@@ -6,7 +6,14 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(req).pipe(
+        
+        const authReq = req.clone({
+            headers: req.headers.set("Authorization", "custom-token"),
+
+            withCredentials: true // Importand for consistent session id in ASP.NET
+        });
+        
+        return next.handle(authReq).pipe(
             catchError(error => {
                 if (error instanceof HttpErrorResponse) {
                     if (error.status === 401) {
