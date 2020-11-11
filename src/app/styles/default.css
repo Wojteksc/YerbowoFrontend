@@ -29,6 +29,10 @@ a {
     padding-right: 15px;
 }
 
+/* ANGULAR */
+div[ng-reflect-router-link] {
+    cursor: pointer;
+}
 
 /* TEXT COLORS */
 .text-danger {

@@ -23,8 +23,9 @@
       <div *ngIf="product.state == productState.Promotion && product.price != product.oldPrice" class="product-old-price">
         {{ product.oldPrice.toFixed(2) }} zł
       </div>
-      <form class="product-basket" action="#" method="post" data-product-id="1">
-        <input class="product-add-cart" type="submit" onclick="" value="Do koszyka">
+      <form [formGroup]="cartForm" (ngSubmit)="add()" class="product-basket">
+        <input type="hidden" formControlName="id">
+        <input class="product-add-cart" type="submit" value="Do koszyka">
       </form>
     </div>
 </div>

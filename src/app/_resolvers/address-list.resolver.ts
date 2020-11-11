@@ -16,8 +16,6 @@ export class AddressListResolver implements Resolve<AddressCard[]> {
     return this.addressService.getAddresses(this.authService.decodedToken.sub).pipe(
       catchError(error => {
         this.alertify.error('Błąd podczas pobrania danych');
-        console.log(error);
-        //this.router.navigate(['/home']);
         return of(null);
       })
     );

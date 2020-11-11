@@ -29,7 +29,6 @@ export class ProductTabsComponent implements OnInit {
       this.recommended = homeProducts.recommended;
       this.promotions = homeProducts.promotions;
     }, error => {
-      console.log(error);
     });
   }
 

@@ -16,8 +16,6 @@ export class OrderHistoryTableResolver implements Resolve<OrderHistoryItem[]> {
     return this.orderService.getOrders(this.authService.decodedToken.sub).pipe(
       catchError(error => {
         this.alertify.error('Błąd podczas pobrania danych');
-        console.log(error);
-        // this.router.navigate(['/moje-konto']);
         return of(null);
       })
     );

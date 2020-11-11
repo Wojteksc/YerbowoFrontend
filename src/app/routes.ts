@@ -20,6 +20,8 @@ import { AddressAddComponent } from './components/account/address-add/address-ad
 import { AddressEditComponent } from './components/account/address-edit/address-edit.component';
 import { AddressEditResolver } from './_resolvers/address-edit.resolver';
 import { AccountOptionListComponent } from './components/account/account-option-list/account-option-list.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartResolver } from './_resolvers/cart.resolver';
 
 
 export const appRoutes: Routes = [
@@ -28,6 +30,7 @@ export const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent},
     { path: 'sklep/:category/:subcategory', component: ProductListComponent, resolve: {products: ProductListResolver} },
     { path: 'sklep/:category/:subcategory/:product', component: ProductDetailComponent, resolve: {product: ProductDetailResolver}},
+    { path: 'koszyk', component: CartComponent, resolve: {cart: CartResolver}},
     {
         path: '',
         runGuardsAndResolvers: 'always',

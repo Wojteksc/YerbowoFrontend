@@ -10,4 +10,6 @@ export interface ProductDetail {
    stock: number;
    state: ProductState;
    image: string;
+   category: string;
+   subcategory: string;
 }

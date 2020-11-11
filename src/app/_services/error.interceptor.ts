@@ -8,9 +8,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         
         const authReq = req.clone({
-            headers: req.headers.set("Authorization", "custom-token"),
-
-            withCredentials: true // Importand for consistent session id in ASP.NET
+            withCredentials: true // Important for consistent session id in ASP.NET
         });
         
         return next.handle(authReq).pipe(

@@ -45,6 +45,8 @@ import { AddressEditComponent } from './components/account/address-edit/address-
 import { AddressEditResolver } from './_resolvers/address-edit.resolver';
 import { AccountOptionCardComponent } from './components/account/account-option-card/account-option-card.component';
 import { AccountOptionListComponent } from './components/account/account-option-list/account-option-list.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartResolver } from './_resolvers/cart.resolver';
 
 export function tokkenGetter() {
   return localStorage.getItem('token');
@@ -89,7 +91,8 @@ export function provideConfig() {
     AddressAddComponent,
     AddressEditComponent,
     AccountOptionCardComponent,
-    AccountOptionListComponent
+    AccountOptionListComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -125,6 +128,7 @@ export function provideConfig() {
     },
     AddressListResolver,
     AddressEditResolver,
+    CartResolver
   ],
   bootstrap: [AppComponent]
 })

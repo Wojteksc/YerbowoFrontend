@@ -1,7 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { ProductDetail } from 'src/app/_models/productDetail';
 import { ProductService } from 'src/app/_services/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CartService } from 'src/app/_services/cart.service';
+import { AlertifyService } from 'src/app/_services/alertify.service';
+import { DataService } from 'src/app/_services/data.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,7 +15,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
   product: ProductDetail;
-  constructor(private activatedRoute: ActivatedRoute) { }
+  productForm: FormGroup;
+  @Output() onCountCart = new EventEmitter();
+  totalCartProducts: any;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private cartService: CartService,
+              private alertify: AlertifyService,
+              private dataService: DataService) { }
 
   ngOnInit() {
     this.activatedRoute.data.subscribe(data => {
@@ -19,6 +30,24 @@ export class ProductDetailComponent implements OnInit {
     });
 
     window.scrollTo(0, 0);
+
+    this.productForm = new FormGroup({
+      id: new FormControl(this.product.id, Validators.required),
+      quantity: new FormControl(1, Validators.required)
+    });
+
+    this.dataService.currentTotalMessage.subscribe(totalCartProducts => this.totalCartProducts = totalCartProducts)
+  }
+
+  onSubmit() {
+    if(this.productForm.valid) {
+      this.cartService.add(this.productForm.value.id, this.productForm.value.quantity).subscribe(response => {
+        this.alertify.success('Dodano do koszyka');
+        this.dataService.changeTotalCartProducts(response.totalItems);
+      }, error => {
+        this.alertify.error(error);
+      });
+    }
   }
 
 }

@@ -12,9 +12,9 @@
           </div>
       </div>
       <div id="shopping-cart">
-          <a href="#">
+          <a [routerLink]="['/koszyk']">
               <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-              <span> Koszyk (pusty)</span>
+              <span> Koszyk ({{totalCartProducts}})</span>
           </a>
       </div>
 </div>

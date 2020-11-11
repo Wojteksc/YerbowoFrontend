@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DataService } from 'src/app/_services/data.service';
 
 @Component({
   selector: 'app-search',
@@ -7,10 +8,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class SearchComponent implements OnInit {
-
-  constructor() { }
+  totalCartProducts: any
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.currentTotalMessage.subscribe(totalCartProducts => this.totalCartProducts = totalCartProducts)
   }
 
 }
