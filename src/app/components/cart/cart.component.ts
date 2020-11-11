@@ -66,7 +66,8 @@ export class CartComponent implements OnInit {
 
   deleteProduct(productId) {
     this.cartService.remove(productId).subscribe(response => {
-      this.cart.items.splice(this.cart.items.findIndex(x => x.product.id === productId), 1);
+      this.cart = response;
+      // this.cart.items.splice(this.cart.items.findIndex(x => x.product.id === productId), 1);
       this.alertify.success("Produkt został usunięty z koszyka.")
       this.dataService.changeTotalCartProducts(response.totalItems);
     }, error => {
