@@ -17,6 +17,10 @@ get() {
   return this.http.get<Cart>(`${this.baseUrl}cart`);
 }
 
+getTotalCartProducts() {
+  return this.http.get<number>(`${this.baseUrl}cart/totalCartProducts`)
+}
+
 add(id: number, quantity: number = 1) {
   return this.http.post(`${this.baseUrl}cart`, { id, quantity })
   .pipe(
