@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
   }
 
   saveRange(productId, newValue) {
-    if(newValue < 0) {
+    if(newValue < 1) {
       return;
     }
     this.updateCart(productId, newValue);
@@ -67,7 +67,6 @@ export class CartComponent implements OnInit {
   deleteProduct(productId) {
     this.cartService.remove(productId).subscribe(response => {
       this.cart = response;
-      // this.cart.items.splice(this.cart.items.findIndex(x => x.product.id === productId), 1);
       this.alertify.success("Produkt został usunięty z koszyka.")
       this.dataService.changeTotalCartProducts(response.totalItems);
     }, error => {
