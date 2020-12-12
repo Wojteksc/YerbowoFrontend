@@ -4,17 +4,14 @@
       <form #loginForm="ngForm" (ngSubmit)="login()" class="subgrid-col-1 grid-items-center">      
         <input type="text" name="email" placeholder="E-mail" required [(ngModel)]="model.email" class="input-text">
         <input type="password" name="password" placeholder="Hasło" required [(ngModel)]="model.password" class="input-text">
-
-        <div class="form-group">
-          <input type="submit" class="btn-submit" value="Zaloguj"/>
-        </div>
+        <input type="submit" class="btn-submit" value="Zaloguj"/>
       </form>  
 
       <br>
       <h4><span>LUB</span></h4>
       <br>
 
-      <div class="subgrid-col-2-auto grid-items-center">
+      <div class="subgrid-social-login grid-items-center">
         <button (click)="loginWithSocial('FACEBOOK')" class="loginBtn loginBtn--facebook grid-item-right">
           Zaloguj przez Facebook
         </button> 

@@ -10,3 +10,25 @@ h4 span {
    background:#fff; 
    padding:0 10px; 
 }
+
+.subgrid-social-login {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 15px;
+}
+
+@media only screen and (max-width: 500px) {
+  .grid-area-center {
+    grid-area: center;
+    justify-self: center;
+  }
+
+  .subgrid-social-login {
+    grid-template-columns: auto;
+  }
+
+  .loginBtn--google {
+    margin-top: 10px;
+    padding-right: 31px;
+  }
+}

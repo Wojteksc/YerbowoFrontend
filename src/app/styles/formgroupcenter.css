@@ -30,7 +30,7 @@
 
   .subgrid-col-1 {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: minmax(100px, auto);
     column-gap: 15px;
   }
   
