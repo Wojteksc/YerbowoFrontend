@@ -9,7 +9,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-account-edit',
   templateUrl: './account-edit.component.html',
-  styleUrls: ['../../../styles/formgroupcenter.css', './account-edit.component.css']
+  styleUrls: ['../../../styles/form-center.css', './account-edit.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AccountEditComponent implements OnInit {
   user: User;

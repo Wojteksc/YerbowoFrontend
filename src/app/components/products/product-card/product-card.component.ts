@@ -10,7 +10,7 @@ import { DataService } from 'src/app/_services/data.service';
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: ProductCard;

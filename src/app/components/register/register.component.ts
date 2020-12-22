@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { User } from 'src/app/_models/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['../../styles/formgroupcenter.css','./register.component.css'],
+  styleUrls: ['../../styles/form-center.css','./register.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RegisterComponent implements OnInit {
   user: User;

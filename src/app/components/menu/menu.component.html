@@ -3,7 +3,7 @@
     <div id="top-menu-title">MENU</div>
     <label class="top-menu-plus" for="top-menu-toggle">+</label>
     <input type="checkbox" id="top-menu-toggle" />
-    <ul class="top-menu-items">
+    <ul class="top-menu-items" (click)="clicked($event)">
         <li>
             <a>YERBA MATE</a>
             <ul class="top-menu-items-level1">

@@ -1,5 +1,5 @@
 
-.grid {
+.grid-account-tabs {
   margin-top: 5%;
   margin-bottom: 5%;
   display: grid;
@@ -7,22 +7,19 @@
   grid-gap: 20px;
 }
 
-.grid-item {
+.grid-account-tabs-item {
   color: #bbb;
   list-style: none;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
   padding: 10px;
+  list-style: none;
 }
 
 .grid-item.active {
   color: #555;
   border-bottom: 2px solid orange;
-}
-
-.grid-item {
-  list-style: none;
 }
 
 .grid-item.active {
@@ -32,7 +29,7 @@
 }
 
 @media (min-width: 830px) {
-  .grid {
+  .grid-account-tabs{
     grid-template-columns: repeat(4, 1fr);
   }
   
@@ -41,7 +38,7 @@
     border-bottom: 2px solid orange;
   }
 
-  .grid-item {
+  .grid-account-tabs-item {
     padding: 0px 0px 10px 0px;
   }
 }

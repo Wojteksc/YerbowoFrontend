@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AddressCreate } from 'src/app/_models/addressCreate';
 import { AddressService } from 'src/app/_services/address.service';
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-address-add',
   templateUrl: './address-add.component.html',
-  styleUrls: ['../../../styles/formgroupcenter.css', './address-add.component.css']
+  styleUrls: ['../../../styles/form-center.css', './address-add.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AddressAddComponent implements OnInit {
   address: AddressCreate;

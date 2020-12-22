@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/_services/auth.service';
   selector: 'app-address-list',
   templateUrl: './address-list.component.html',
   styleUrls: ['./address-list.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AddressListComponent implements OnInit {
   addresses: AddressCard[]

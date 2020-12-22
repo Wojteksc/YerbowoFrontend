@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AddressEdit } from 'src/app/_models/addressEdit';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AddressService } from 'src/app/_services/address.service';
@@ -9,7 +9,8 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 @Component({
   selector: 'app-address-edit',
   templateUrl: './address-edit.component.html',
-  styleUrls: ['../../../styles/formgroupcenter.css', './address-edit.component.css']
+  styleUrls: ['../../../styles/form-center.css', './address-edit.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AddressEditComponent implements OnInit {
   addressId: number;

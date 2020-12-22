@@ -6,7 +6,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
   selector: 'app-address-card',
   templateUrl: './address-card.component.html',
   styleUrls: ['./address-card.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AddressCardComponent implements OnInit {
   @Output() onDeleteAddress = new EventEmitter();

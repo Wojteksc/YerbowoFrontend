@@ -7,7 +7,7 @@ import { HomeService } from 'src/app/_services/home.service';
   selector: 'app-product-tabs',
   templateUrl: './product-tabs.component.html',
   styleUrls: ['./product-tabs.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductTabsComponent implements OnInit {
   homeProducts: HomeProducts;

@@ -9,7 +9,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductListComponent implements OnInit {
   products: ProductCard[];

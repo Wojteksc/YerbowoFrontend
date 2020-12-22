@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent implements OnInit {
 

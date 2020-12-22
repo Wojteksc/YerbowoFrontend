@@ -4,7 +4,7 @@
 @import './app/styles/band.css';
 @import './app/styles/alert.css';
 @import './app/styles/validator.css';
-@import './app/styles/socialbuttons.css';
+@import './app/styles/social-buttons.css';
 @import './app/styles/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';

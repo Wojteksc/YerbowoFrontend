@@ -1,4 +1,4 @@
-.grid {
+.grid-cart {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 20px 10px;
@@ -100,7 +100,7 @@
 
   @media only screen and (max-width: 1025px) {
 
-    .grid {
+    .grid-cart {
       display: none;
     }
 

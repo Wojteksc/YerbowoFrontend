@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-account-option-list',
   templateUrl: './account-option-list.component.html',
-  styleUrls: ['./account-option-list.component.css']
+  styleUrls: ['./account-option-list.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AccountOptionListComponent implements OnInit {
   
