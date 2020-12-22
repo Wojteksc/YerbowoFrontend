@@ -17,12 +17,12 @@
   list-style: none;
 }
 
-.grid-item.active {
+.grid-account-tabs-item.active {
   color: #555;
   border-bottom: 2px solid orange;
 }
 
-.grid-item.active {
+.grid-account-tabs-item.active {
   border: 1px solid #ddd;
   border-top: 2px solid orange;
   border-bottom: 2px solid orange;
@@ -33,7 +33,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
   
-  .grid-item.active {
+  .grid-account-tabs-item.active {
     border: unset;
     border-bottom: 2px solid orange;
   }
