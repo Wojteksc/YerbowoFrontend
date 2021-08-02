@@ -14,8 +14,17 @@ export class MenuComponent implements OnInit {
     
   }
 
-  clicked(event: MouseEvent) {
-    console.log(event.target);
+  clickedMenuItem(event: MouseEvent) {
+    if(this.isClickedLink(event.target)) {
+      //this.collapseMenu();
+    }
+  }
+
+  isClickedLink(eventTarget: EventTarget) : boolean {
+    return (eventTarget as Element).className === "top-menu-items-link";
+  }
+
+  collapseMenu() {
     (document.getElementById("top-menu-toggle") as HTMLInputElement).checked = false;
   }
 
